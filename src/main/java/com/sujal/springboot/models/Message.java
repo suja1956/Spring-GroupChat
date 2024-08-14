@@ -1,28 +1,54 @@
 package com.sujal.springboot.models;
 
 public class Message {
-	 private String name;
+		private String senderName;
+		private String receiverName;
 	    private String content;
+	    private Status status;
+		
+	    public Message() {}
+		public Message(String senderName, String receiverName, String content, Status status) {
+			super();
+			this.senderName = senderName;
+			this.receiverName = receiverName;
+			this.content = content;
+			this.status = status;
+		}
 
-	    public Message(String name, String content) {
-	        this.name = name;
-	        this.content = content;
-	    }
+		public String getSenderName() {
+			return senderName;
+		}
 
+		public void setSenderName(String senderName) {
+			this.senderName = senderName;
+		}
 
-	    public String getName() {
-	        return name;
-	    }
+		public String getReceiverName() {
+			return receiverName;
+		}
 
-	    public void setName(String name) {
-	        this.name = name;
-	    }
+		public void setReceiverName(String receiverName) {
+			this.receiverName = receiverName;
+		}
 
-	    public String getContent() {
+		public String getContent() {
 	        return content;
 	    }
 
 	    public void setContent(String content) {
 	        this.content = content;
 	    }
+
+		public Status getStatus() {
+			return status;
+		}
+
+		public void setStatus(Status status) {
+			this.status = status;
+		}
+		@Override
+		public String toString() {
+			return "Message [senderName=" + senderName + ", receiverName=" + receiverName + ", content=" + content
+					+ ", status=" + status + "]";
+		}
 }
